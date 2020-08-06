@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "card": {
+      "type": "library",
+      "root": "libs/card",
+      "entryFile": "index",
+      "sourceRoot": "libs/card/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/card/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": true
+  }
+}
