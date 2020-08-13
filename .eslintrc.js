@@ -24,6 +24,7 @@ module.exports = {
     'no-useless-constructor': 'off',
     'no-empty-function': 'off',
     'no-tabs': 'off',
+    'object-curly-newline': "off",
     'no-use-before-define': 0,
     'no-console': 1,
     'no-undef': 0,

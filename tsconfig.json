@@ -13,10 +13,10 @@
     "incremental": true,
     "paths": {
       "@user/user": [
-        "src/users"
+        "src/models/users"
       ],
       "@user/user/*": [
-        "src/users/*"
+        "src/models/users/*"
       ]
     }
   }

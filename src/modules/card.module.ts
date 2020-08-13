@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
-import { CardService } from '../domain/card.service'
-import { CardController } from './card.controller'
+import { CardService } from '../services/card.service'
+import { CardController } from '../controllers/card.controller'
 
 @Module({
   providers: [CardService],
