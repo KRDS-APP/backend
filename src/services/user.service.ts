@@ -17,10 +17,10 @@ export class UserService {
   }
 
   async login(data: UserDTO): Promise<UserRO> {
-    const { username, password } = data
-    const user = await this.userRepository.findOne({ where: { username } })
+    const { email, password } = data
+    const user = await this.userRepository.findOne({ where: { email } })
 
-    if (!user || (await user.comparePassword(password))) {
+    if (!user || !(await user.comparePassword(password))) {
       throw new HttpException('Invalid credentials', HttpStatus.BAD_REQUEST)
     }
 
@@ -28,8 +28,8 @@ export class UserService {
   }
 
   async register(data: UserDTO): Promise<UserRO> {
-    const { username } = data
-    let user = await this.userRepository.findOne({ username })
+    const { email } = data
+    let user = await this.userRepository.findOne({ email })
     if (user) {
       throw new HttpException('User already exists', HttpStatus.BAD_REQUEST)
     }

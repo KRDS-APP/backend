@@ -1,9 +1,9 @@
 /* eslint-disable max-classes-per-file */
-import { IsNotEmpty } from 'class-validator'
+import { IsNotEmpty, IsEmail } from 'class-validator'
 
 export class UserDTO {
-  @IsNotEmpty()
-  username: string
+  @IsEmail()
+  email: string
 
   @IsNotEmpty()
   password: string
@@ -12,7 +12,7 @@ export class UserDTO {
 export class UserRO {
   id: string
 
-  username: string
+  email: string
 
   created: Date
 

@@ -17,10 +17,11 @@ export class UserEntity {
   created: Date
 
   @Column({
-    type: 'text',
+    type: 'varchar',
     unique: true,
+    length: 45,
   })
-  username: string
+  email: string
 
   @Column('text')
   password: string
@@ -31,11 +32,11 @@ export class UserEntity {
   }
 
   toResponseObject(showToken = true) {
-    const { id, created, username, token } = this
+    const { id, created, email, token } = this
     const responseObject: any = {
       id,
       created,
-      username,
+      email,
     }
 
     if (showToken) {
@@ -50,7 +51,7 @@ export class UserEntity {
   }
 
   get token() {
-    const { id, username } = this
-    return jwt.sign({ id, username }, process.env.SECRET, { expiresIn: '7d' })
+    const { id, email } = this
+    return jwt.sign({ id, email }, process.env.SECRET, { expiresIn: '7d' })
   }
 }
