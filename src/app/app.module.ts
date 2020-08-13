@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
+import { CardEntity } from '../models/cards/card.entity'
 import { UserEntity } from '../models/users/user.entity'
 import { CardModule } from '../modules/card.module'
 import { UserModule } from '../modules/user.module'
@@ -15,7 +16,7 @@ import { AppService } from './app.service'
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_URL_PASSWORD,
       database: process.env.DATABASE_NAME,
-      entities: [UserEntity],
+      entities: [UserEntity, CardEntity],
       synchronize: true,
       logging: true,
     }),
